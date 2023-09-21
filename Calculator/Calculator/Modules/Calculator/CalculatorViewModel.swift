@@ -12,6 +12,7 @@ class CalculatorViewModel: ObservableObject {
     // MARK: - Properties
     private let currencyConvertorService: CurrencyConvertorServiceProtocol
     private let reachabilityService: ReachabilityServiceProtocol
+    private let analyticsService: AnalyticsServiceProtocol
     
     private var colors = ColorScheme.second.colors
     
@@ -73,9 +74,11 @@ class CalculatorViewModel: ObservableObject {
     
     // MARK: - Lifecycle
     init(currencyConvertorService: CurrencyConvertorServiceProtocol = CurrencyConvertorService.shared,
-         reachabilityService: ReachabilityServiceProtocol = ReachabilityService.shared) {
+         reachabilityService: ReachabilityServiceProtocol = ReachabilityService.shared,
+         analyticsService: AnalyticsServiceProtocol = AnalyticsService()) {
         self.currencyConvertorService = currencyConvertorService
         self.reachabilityService = reachabilityService
+        self.analyticsService = analyticsService
         
         setup()
     }
@@ -129,6 +132,7 @@ class CalculatorViewModel: ObservableObject {
                     inTheMiddle = false
                     calculatorLogic.setOperand(value)
                 case .failure(let error):
+                    analyticsService.trackEvent("Currency convertion error", params: nil)
                     print(error)
                     isErrorAlertVisible = true
                 }
