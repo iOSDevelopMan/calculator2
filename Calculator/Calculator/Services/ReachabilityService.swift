@@ -7,28 +7,29 @@
 
 import Foundation
 import Network
+import Combine
 
 protocol ReachabilityServiceProtocol {
-    var isOnlinePublisher: Published<Bool>.Publisher { get }
+    var isOnline: CurrentValueSubject<Bool, Never> { get }
 }
 
 class ReachabilityService: ReachabilityServiceProtocol {
     static let shared = ReachabilityService()
+    
+    var isOnline: CurrentValueSubject<Bool, Never> = .init(true)
+    
+    private let monitor = NWPathMonitor()
+    
     private init() {
         startMonitoring()
     }
     
-    private let monitor = NWPathMonitor()
-    
-    @Published var isOnline: Bool = true
-    var isOnlinePublisher: Published<Bool>.Publisher { $isOnline }
-    
     func startMonitoring() {
-        isOnline = monitor.currentPath.status == .satisfied
+        isOnline.send(monitor.currentPath.status == .satisfied)
         
         monitor.pathUpdateHandler = { path in
             DispatchQueue.main.async {
-                self.isOnline = path.status == .satisfied
+                self.isOnline.send(path.status == .satisfied)
             }
         }
 

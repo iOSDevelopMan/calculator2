@@ -102,8 +102,8 @@ class CalculatorViewModel: ObservableObject {
     }
     
     private func setupReachabilityService() {
-        reachabilityService.isOnlinePublisher
-            .sink { [weak self ] in self?.isOnline = $0 }
+        reachabilityService.isOnline
+            .sink { [weak self] in self?.isOnline = $0 }
             .store(in: &cancellables)
     }
     
