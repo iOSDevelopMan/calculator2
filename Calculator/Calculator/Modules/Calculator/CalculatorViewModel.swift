@@ -13,49 +13,18 @@ class CalculatorViewModel: ObservableObject {
     private let currencyConvertorService: CurrencyConvertorServiceProtocol
     private let reachabilityService: ReachabilityServiceProtocol
     private let analyticsService: AnalyticsServiceProtocol
+    private let colorSchemeManager: ColorSchemeManagerProtocol
+    private var colorScheme: ColorSchemeProtocol { colorSchemeManager.colorScheme.value }
     
-    private var colors = ColorScheme.second.colors
+    var backgroundColor: Color { colorScheme.background }
+    var resultColor: Color { colorScheme.title1 }
+    var loaderColor: Color { colorScheme.cryptoCurrencyBackground }
     
-    lazy var buttons: [[CalculatorButtonViewModel]] = [
-        [
-            .init(title: "AC", foregroundColor: colors.title2, backgroundColor: colors.actionBackground2, actionType: .operation, isEnabled: true),
-            .init(title: "cos", foregroundColor: colors.title2, backgroundColor: colors.actionBackground2, actionType: .operation, isEnabled: true),
-            .init(title: "sin", foregroundColor: colors.title2, backgroundColor: colors.actionBackground2, actionType: .operation, isEnabled: true),
-            .init(title: "/", foregroundColor: colors.title1, backgroundColor: colors.actionBackground3, actionType: .operation, isEnabled: true)
-        ],
-        [
-            .init(title: "7", foregroundColor: colors.title1, backgroundColor: colors.actionBackground1, actionType: .operand, isEnabled: true),
-            .init(title: "8", foregroundColor: colors.title1, backgroundColor: colors.actionBackground1, actionType: .operand, isEnabled: true),
-            .init(title: "9", foregroundColor: colors.title1, backgroundColor: colors.actionBackground1, actionType: .operand, isEnabled: true),
-            .init(title: "*", foregroundColor: colors.title1, backgroundColor: colors.actionBackground3, actionType: .operation, isEnabled: true)
-        ],
-        [
-            .init(title: "4", foregroundColor: colors.title1, backgroundColor: colors.actionBackground1, actionType: .operand, isEnabled: true),
-            .init(title: "5", foregroundColor: colors.title1, backgroundColor: colors.actionBackground1, actionType: .operand, isEnabled: true),
-            .init(title: "6", foregroundColor: colors.title1, backgroundColor: colors.actionBackground1, actionType: .operand, isEnabled: true),
-            .init(title: "-", foregroundColor: colors.title1, backgroundColor: colors.actionBackground3, actionType: .operation, isEnabled: true)
-        ],
-        [
-            .init(title: "1", foregroundColor: colors.title1, backgroundColor: colors.actionBackground1, actionType: .operand, isEnabled: true),
-            .init(title: "2", foregroundColor: colors.title1, backgroundColor: colors.actionBackground1, actionType: .operand, isEnabled: true),
-            .init(title: "3", foregroundColor: colors.title1, backgroundColor: colors.actionBackground1, actionType: .operand, isEnabled: true),
-            .init(title: "+", foregroundColor: colors.title1, backgroundColor: colors.actionBackground3, actionType: .operation, isEnabled: true)
-        ],
-        [
-            .init(title: "₿", foregroundColor: colors.title1, backgroundColor: colors.cryptoCurrencyBackground, actionType: .exchange, isEnabled: true),
-            .init(title: "0", foregroundColor: colors.title1, backgroundColor: colors.actionBackground1, actionType: .operand, isEnabled: true),
-            .init(title: "", foregroundColor: colors.title1, backgroundColor: colors.actionBackground1, actionType: .operand, isEnabled: false),
-            .init(title: "=", foregroundColor: colors.title1, backgroundColor: colors.actionBackground3, actionType: .operation, isEnabled: true)
-        ]
-    ]
-    
-    var backgroundColor: Color { colors.background }
-    var resultColor: Color { colors.title1 }
-    var loaderColor: Color { colors.cryptoCurrencyBackground }
+    @Published private(set) var buttons = [[CalculatorButtonViewModel]]()
     
     @Published private var calculatorLogic = CalculatorLogic()
-    @Published var isOnline = true
-    @Published var isLoading = false
+    @Published private(set) var isOnline = true
+    @Published private(set) var isLoading = false
     @Published var isErrorAlertVisible = false
     
     private let numberFormatter: NumberFormatter = {
@@ -75,17 +44,61 @@ class CalculatorViewModel: ObservableObject {
     // MARK: - Lifecycle
     init(currencyConvertorService: CurrencyConvertorServiceProtocol = CurrencyConvertorService.shared,
          reachabilityService: ReachabilityServiceProtocol = ReachabilityService.shared,
-         analyticsService: AnalyticsServiceProtocol = AnalyticsService()) {
+         analyticsService: AnalyticsServiceProtocol = AnalyticsService(),
+         colorSchemeManager: ColorSchemeManagerProtocol = ColorSchemeManager(FirstColorScheme())) {
         self.currencyConvertorService = currencyConvertorService
         self.reachabilityService = reachabilityService
         self.analyticsService = analyticsService
+        self.colorSchemeManager = colorSchemeManager
         
         setup()
     }
     
     // MARK: - Setup
     private func setup() {
+        setupColorSchemeManager()
         setupReachabilityService()
+    }
+    
+    private func setupColorSchemeManager() {
+        colorSchemeManager.colorScheme
+            .sink { [weak self] _ in self?.setupButtons() }
+            .store(in: &cancellables)
+    }
+    
+    private func setupButtons() {
+        buttons = [
+            [
+                .init(title: "AC", foregroundColor: colorScheme.title2, backgroundColor: colorScheme.actionBackground2, actionType: .operation, isEnabled: true),
+                .init(title: "cos", foregroundColor: colorScheme.title2, backgroundColor: colorScheme.actionBackground2, actionType: .operation, isEnabled: true),
+                .init(title: "sin", foregroundColor: colorScheme.title2, backgroundColor: colorScheme.actionBackground2, actionType: .operation, isEnabled: true),
+                .init(title: "/", foregroundColor: colorScheme.title1, backgroundColor: colorScheme.actionBackground3, actionType: .operation, isEnabled: true)
+            ],
+            [
+                .init(title: "7", foregroundColor: colorScheme.title1, backgroundColor: colorScheme.actionBackground1, actionType: .operand, isEnabled: true),
+                .init(title: "8", foregroundColor: colorScheme.title1, backgroundColor: colorScheme.actionBackground1, actionType: .operand, isEnabled: true),
+                .init(title: "9", foregroundColor: colorScheme.title1, backgroundColor: colorScheme.actionBackground1, actionType: .operand, isEnabled: true),
+                .init(title: "*", foregroundColor: colorScheme.title1, backgroundColor: colorScheme.actionBackground3, actionType: .operation, isEnabled: true)
+            ],
+            [
+                .init(title: "4", foregroundColor: colorScheme.title1, backgroundColor: colorScheme.actionBackground1, actionType: .operand, isEnabled: true),
+                .init(title: "5", foregroundColor: colorScheme.title1, backgroundColor: colorScheme.actionBackground1, actionType: .operand, isEnabled: true),
+                .init(title: "6", foregroundColor: colorScheme.title1, backgroundColor: colorScheme.actionBackground1, actionType: .operand, isEnabled: true),
+                .init(title: "-", foregroundColor: colorScheme.title1, backgroundColor: colorScheme.actionBackground3, actionType: .operation, isEnabled: true)
+            ],
+            [
+                .init(title: "1", foregroundColor: colorScheme.title1, backgroundColor: colorScheme.actionBackground1, actionType: .operand, isEnabled: true),
+                .init(title: "2", foregroundColor: colorScheme.title1, backgroundColor: colorScheme.actionBackground1, actionType: .operand, isEnabled: true),
+                .init(title: "3", foregroundColor: colorScheme.title1, backgroundColor: colorScheme.actionBackground1, actionType: .operand, isEnabled: true),
+                .init(title: "+", foregroundColor: colorScheme.title1, backgroundColor: colorScheme.actionBackground3, actionType: .operation, isEnabled: true)
+            ],
+            [
+                .init(title: "₿", foregroundColor: colorScheme.title1, backgroundColor: colorScheme.cryptoCurrencyBackground, actionType: .exchange, isEnabled: true),
+                .init(title: "0", foregroundColor: colorScheme.title1, backgroundColor: colorScheme.actionBackground1, actionType: .operand, isEnabled: true),
+                .init(title: "", foregroundColor: colorScheme.title1, backgroundColor: colorScheme.actionBackground1, actionType: .operand, isEnabled: false),
+                .init(title: "=", foregroundColor: colorScheme.title1, backgroundColor: colorScheme.actionBackground3, actionType: .operation, isEnabled: true)
+            ]
+        ]
     }
     
     private func setupReachabilityService() {

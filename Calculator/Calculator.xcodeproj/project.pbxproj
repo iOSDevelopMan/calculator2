@@ -12,6 +12,7 @@
 		320DA5B72AB85ED800FA5088 /* ColorScheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 320DA5B62AB85ED800FA5088 /* ColorScheme.swift */; };
 		320DA5BA2AB9FB3300FA5088 /* Double+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 320DA5B92AB9FB3300FA5088 /* Double+Extensions.swift */; };
 		32399D432ABB2B880059176E /* ReachabilityService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32399D422ABB2B880059176E /* ReachabilityService.swift */; };
+		3246BE672AC3A1F70058D41B /* ColorSchemeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3246BE662AC3A1F70058D41B /* ColorSchemeManager.swift */; };
 		3248A2982ABC6AAC0022B851 /* LoaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3248A2972ABC6AAC0022B851 /* LoaderView.swift */; };
 		3248A29A2ABC72660022B851 /* CalculatorButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3248A2992ABC72660022B851 /* CalculatorButton.swift */; };
 		3248A29C2ABC7A400022B851 /* StatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3248A29B2ABC7A400022B851 /* StatusView.swift */; };
@@ -38,6 +39,7 @@
 		320DA5B92AB9FB3300FA5088 /* Double+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Extensions.swift"; sourceTree = "<group>"; };
 		320DA5BC2ABA16FE00FA5088 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		32399D422ABB2B880059176E /* ReachabilityService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReachabilityService.swift; sourceTree = "<group>"; };
+		3246BE662AC3A1F70058D41B /* ColorSchemeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorSchemeManager.swift; sourceTree = "<group>"; };
 		3248A2972ABC6AAC0022B851 /* LoaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoaderView.swift; sourceTree = "<group>"; };
 		3248A2992ABC72660022B851 /* CalculatorButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorButton.swift; sourceTree = "<group>"; };
 		3248A29B2ABC7A400022B851 /* StatusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusView.swift; sourceTree = "<group>"; };
@@ -116,6 +118,14 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		3246BE682AC3A1FE0058D41B /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				3246BE662AC3A1F70058D41B /* ColorSchemeManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
 		3248A29F2ABC7FD80022B851 /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -156,6 +166,7 @@
 				320DA5B82AB8642F00FA5088 /* Models */,
 				320DA5B42AB854F300FA5088 /* Modules */,
 				320DA5B32AB854E400FA5088 /* Services */,
+				3246BE682AC3A1FE0058D41B /* Managers */,
 				32F902662AB34A3900D9DC19 /* Preview Content */,
 			);
 			path = Calculator;
@@ -280,6 +291,7 @@
 				3248A29E2ABC7EE40022B851 /* ResultView.swift in Sources */,
 				32756FEF2ABB12C00024FF48 /* CalculatorSizes.swift in Sources */,
 				3248A29A2ABC72660022B851 /* CalculatorButton.swift in Sources */,
+				3246BE672AC3A1F70058D41B /* ColorSchemeManager.swift in Sources */,
 				3248A29C2ABC7A400022B851 /* StatusView.swift in Sources */,
 				320DA5B22AB854A400FA5088 /* CurrencyConvertorService.swift in Sources */,
 				320DA5BA2AB9FB3300FA5088 /* Double+Extensions.swift in Sources */,

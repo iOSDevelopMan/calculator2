@@ -11,9 +11,13 @@ import SwiftUI
 struct CalculatorApp: App {
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
     
+    private var isFirstColorScheme = false
+    
     var body: some Scene {
         WindowGroup {
-            CalculatorView(viewModel: CalculatorViewModel())
+            let colorScheme: ColorSchemeProtocol = isFirstColorScheme ? FirstColorScheme() : SecondColorScheme()
+            
+            CalculatorView(viewModel: CalculatorViewModel(colorSchemeManager: ColorSchemeManager(colorScheme)))
         }
     }
 }

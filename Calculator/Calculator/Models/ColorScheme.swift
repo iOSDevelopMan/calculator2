@@ -8,44 +8,32 @@
 import Foundation
 import SwiftUI
 
-enum ColorScheme: String {
-    case normal
-    case second
-    
-    var colors: SchemeColorsProtocol.Type {
-        switch self {
-        case .normal: return NormalSchemeColors.self
-        case .second: return SecondSchemeColors.self
-        }
-    }
+protocol ColorSchemeProtocol {
+    var background: Color { get }
+    var title1: Color { get }
+    var title2: Color { get }
+    var actionBackground1: Color { get }
+    var actionBackground2: Color { get }
+    var actionBackground3: Color { get }
+    var cryptoCurrencyBackground: Color { get }
 }
 
-protocol SchemeColorsProtocol {
-    static var background: Color { get }
-    static var title1: Color { get }
-    static var title2: Color { get }
-    static var actionBackground1: Color { get }
-    static var actionBackground2: Color { get }
-    static var actionBackground3: Color { get }
-    static var cryptoCurrencyBackground: Color { get }
+struct FirstColorScheme: ColorSchemeProtocol {
+    var background: Color = .black
+    var title1: Color = .white
+    var title2: Color = .black
+    var actionBackground1: Color = .init(uiColor: .darkGray)
+    var actionBackground2: Color = .gray
+    var actionBackground3: Color = .orange
+    var cryptoCurrencyBackground: Color = .blue
 }
 
-struct NormalSchemeColors: SchemeColorsProtocol {
-    static var background: Color { .black }
-    static var title1: Color { .white }
-    static var title2: Color { .black }
-    static var actionBackground1: Color { .init(uiColor: .darkGray) }
-    static var actionBackground2: Color { .gray }
-    static var actionBackground3: Color { .orange }
-    static var cryptoCurrencyBackground: Color { .blue }
-}
-
-struct SecondSchemeColors: SchemeColorsProtocol {
-    static var background: Color { .white }
-    static var title1: Color { .black }
-    static var title2: Color { .white }
-    static var actionBackground1: Color { .blue }
-    static var actionBackground2: Color { .gray }
-    static var actionBackground3: Color { .pink }
-    static var cryptoCurrencyBackground: Color { .green }
+struct SecondColorScheme: ColorSchemeProtocol {
+    var background: Color = .white
+    var title1: Color = .black
+    var title2: Color = .white
+    var actionBackground1: Color = .blue
+    var actionBackground2: Color = .gray
+    var actionBackground3: Color = .pink
+    var cryptoCurrencyBackground: Color = .green
 }
