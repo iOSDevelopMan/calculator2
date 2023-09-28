@@ -14,8 +14,6 @@ struct ResultView: View {
         HStack {
             Spacer()
             Text(title)
-//                .font(.system(size: fontSize))
-//                .foregroundColor(viewModel.resultColor)
                 .multilineTextAlignment(.trailing)
                 .lineLimit(1)
                 .minimumScaleFactor(0.5)

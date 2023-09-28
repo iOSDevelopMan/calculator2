@@ -42,7 +42,7 @@ class CalculatorViewModel: ObservableObject {
     private var cancellables: Set<AnyCancellable> = []
     
     // MARK: - Lifecycle
-    init(currencyConvertorService: CurrencyConvertorServiceProtocol = CurrencyConvertorService.shared,
+    init(currencyConvertorService: CurrencyConvertorServiceProtocol = CurrencyConvertorService(),
          reachabilityService: ReachabilityServiceProtocol = ReachabilityService.shared,
          analyticsService: AnalyticsServiceProtocol = AnalyticsService(),
          colorSchemeManager: ColorSchemeManagerProtocol = ColorSchemeManager(FirstColorScheme())) {

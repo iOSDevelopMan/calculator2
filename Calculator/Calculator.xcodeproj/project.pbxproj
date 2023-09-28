@@ -11,6 +11,7 @@
 		320DA5B22AB854A400FA5088 /* CurrencyConvertorService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 320DA5B12AB854A400FA5088 /* CurrencyConvertorService.swift */; };
 		320DA5B72AB85ED800FA5088 /* ColorScheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 320DA5B62AB85ED800FA5088 /* ColorScheme.swift */; };
 		320DA5BA2AB9FB3300FA5088 /* Double+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 320DA5B92AB9FB3300FA5088 /* Double+Extensions.swift */; };
+		321C304D2AC5969200A65ADC /* CurrencyService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 321C304C2AC5969200A65ADC /* CurrencyService.swift */; };
 		32399D432ABB2B880059176E /* ReachabilityService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32399D422ABB2B880059176E /* ReachabilityService.swift */; };
 		3246BE672AC3A1F70058D41B /* ColorSchemeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3246BE662AC3A1F70058D41B /* ColorSchemeManager.swift */; };
 		3248A2982ABC6AAC0022B851 /* LoaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3248A2972ABC6AAC0022B851 /* LoaderView.swift */; };
@@ -38,6 +39,7 @@
 		320DA5B62AB85ED800FA5088 /* ColorScheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorScheme.swift; sourceTree = "<group>"; };
 		320DA5B92AB9FB3300FA5088 /* Double+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Extensions.swift"; sourceTree = "<group>"; };
 		320DA5BC2ABA16FE00FA5088 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		321C304C2AC5969200A65ADC /* CurrencyService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyService.swift; sourceTree = "<group>"; };
 		32399D422ABB2B880059176E /* ReachabilityService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReachabilityService.swift; sourceTree = "<group>"; };
 		3246BE662AC3A1F70058D41B /* ColorSchemeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorSchemeManager.swift; sourceTree = "<group>"; };
 		3248A2972ABC6AAC0022B851 /* LoaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoaderView.swift; sourceTree = "<group>"; };
@@ -74,6 +76,7 @@
 		320DA5B32AB854E400FA5088 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				321C304C2AC5969200A65ADC /* CurrencyService.swift */,
 				320DA5B12AB854A400FA5088 /* CurrencyConvertorService.swift */,
 				32399D422ABB2B880059176E /* ReachabilityService.swift */,
 				3248A2A92ABC91CA0022B851 /* FirebaseService.swift */,
@@ -295,6 +298,7 @@
 				3248A29C2ABC7A400022B851 /* StatusView.swift in Sources */,
 				320DA5B22AB854A400FA5088 /* CurrencyConvertorService.swift in Sources */,
 				320DA5BA2AB9FB3300FA5088 /* Double+Extensions.swift in Sources */,
+				321C304D2AC5969200A65ADC /* CurrencyService.swift in Sources */,
 				3248A2A82ABC91600022B851 /* AppDelegate.swift in Sources */,
 				3248A2982ABC6AAC0022B851 /* LoaderView.swift in Sources */,
 				32F902612AB34A3700D9DC19 /* CalculatorApp.swift in Sources */,
