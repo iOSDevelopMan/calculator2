@@ -10,11 +10,19 @@ import Analytics
 
 @main
 struct CalculatorApp: App {
-    @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
-    
     private var isFirstColorScheme = false
     
     var body: some Scene {
+        WindowGroup {
+            CalculatorView(viewModel: CalculatorViewModel())
+        }
+    }
+    
+    init() {
+        setupDependencies()
+    }
+    
+    private func setupDependencies() {
         @Provider var currencyConvertorService = CurrencyConvertorService() as CurrencyConvertorServiceProtocol
         @Provider var reachabilityService = ReachabilityService.shared as ReachabilityServiceProtocol
         
@@ -23,9 +31,5 @@ struct CalculatorApp: App {
         
         let firebaseService = FirebaseService()
         @Provider var analyticsCenter = AnalyticsCenter(services: [firebaseService]) as AnalyticsProtocol
-        
-        WindowGroup {
-            CalculatorView(viewModel: CalculatorViewModel())
-        }
     }
 }

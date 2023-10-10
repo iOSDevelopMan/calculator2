@@ -24,7 +24,6 @@
 		3248A2A12ABC8F440022B851 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3248A2A02ABC8F440022B851 /* GoogleService-Info.plist */; };
 		3248A2A42ABC90840022B851 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 3248A2A32ABC90840022B851 /* FirebaseAnalytics */; };
 		3248A2A62ABC90840022B851 /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = 3248A2A52ABC90840022B851 /* FirebaseCrashlytics */; };
-		3248A2A82ABC91600022B851 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3248A2A72ABC91600022B851 /* AppDelegate.swift */; };
 		3248A2AA2ABC91CA0022B851 /* FirebaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3248A2A92ABC91CA0022B851 /* FirebaseService.swift */; };
 		32756FEF2ABB12C00024FF48 /* CalculatorSizes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32756FEE2ABB12C00024FF48 /* CalculatorSizes.swift */; };
 		32E6E4612AB4CEDE003CB832 /* CalculatorButtonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32E6E4602AB4CEDE003CB832 /* CalculatorButtonViewModel.swift */; };
@@ -51,7 +50,6 @@
 		3248A29B2ABC7A400022B851 /* StatusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusView.swift; sourceTree = "<group>"; };
 		3248A29D2ABC7EE40022B851 /* ResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultView.swift; sourceTree = "<group>"; };
 		3248A2A02ABC8F440022B851 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		3248A2A72ABC91600022B851 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3248A2A92ABC91CA0022B851 /* FirebaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseService.swift; sourceTree = "<group>"; };
 		32756FEE2ABB12C00024FF48 /* CalculatorSizes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorSizes.swift; sourceTree = "<group>"; };
 		32E6E4602AB4CEDE003CB832 /* CalculatorButtonViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorButtonViewModel.swift; sourceTree = "<group>"; };
@@ -166,7 +164,6 @@
 			isa = PBXGroup;
 			children = (
 				32F902602AB34A3700D9DC19 /* CalculatorApp.swift */,
-				3248A2A72ABC91600022B851 /* AppDelegate.swift */,
 				32F902642AB34A3900D9DC19 /* Assets.xcassets */,
 				320DA5BC2ABA16FE00FA5088 /* Info.plist */,
 				3248A2A02ABC8F440022B851 /* GoogleService-Info.plist */,
@@ -306,7 +303,6 @@
 				320DA5B22AB854A400FA5088 /* CurrencyConvertorService.swift in Sources */,
 				320DA5BA2AB9FB3300FA5088 /* Double+Extensions.swift in Sources */,
 				321C304D2AC5969200A65ADC /* CurrencyService.swift in Sources */,
-				3248A2A82ABC91600022B851 /* AppDelegate.swift in Sources */,
 				32002F3E2AD58CD700203A23 /* DependencyManager.swift in Sources */,
 				3248A2982ABC6AAC0022B851 /* LoaderView.swift in Sources */,
 				32F902612AB34A3700D9DC19 /* CalculatorApp.swift in Sources */,
