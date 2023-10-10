@@ -118,6 +118,8 @@ class CalculatorViewModel: ObservableObject {
     }
     
     func handleButtonPressed(buttonViewModel: CalculatorButtonViewModel) {
+        analyticsService.trackEvent(CalculatorModels.Event.buttonPressed(title: buttonViewModel.title))
+        
         switch buttonViewModel.actionType {
         case .operand:
             let inputValue = Double(buttonViewModel.title) ?? 0
@@ -146,7 +148,12 @@ class CalculatorViewModel: ObservableObject {
                     inTheMiddle = false
                     calculatorLogic.setOperand(value)
                 case .failure(let error):
-//                    analyticsService.trackEvent("Currency convertion error", params: nil)
+                    analyticsService.trackEvent(
+                        CalculatorModels.Event.error(
+                            service: "currencyConvertorService",
+                            description: error.localizedDescription
+                        )
+                    )
                     print(error)
                     isErrorAlertVisible = true
                 }

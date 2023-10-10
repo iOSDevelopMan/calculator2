@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		32002F3A2AD5829200203A23 /* Analytics in Frameworks */ = {isa = PBXBuildFile; productRef = 32002F392AD5829200203A23 /* Analytics */; };
+		32002F3C2AD5862200203A23 /* CalculatorModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32002F3B2AD5862200203A23 /* CalculatorModels.swift */; };
 		320DA5AE2AB8543800FA5088 /* CalculatorLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 320DA5AD2AB8543800FA5088 /* CalculatorLogic.swift */; };
 		320DA5B22AB854A400FA5088 /* CurrencyConvertorService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 320DA5B12AB854A400FA5088 /* CurrencyConvertorService.swift */; };
 		320DA5B72AB85ED800FA5088 /* ColorScheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 320DA5B62AB85ED800FA5088 /* ColorScheme.swift */; };
@@ -34,6 +35,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		32002F3B2AD5862200203A23 /* CalculatorModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorModels.swift; sourceTree = "<group>"; };
 		320DA5AD2AB8543800FA5088 /* CalculatorLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorLogic.swift; sourceTree = "<group>"; };
 		320DA5B12AB854A400FA5088 /* CurrencyConvertorService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyConvertorService.swift; sourceTree = "<group>"; };
 		320DA5B62AB85ED800FA5088 /* ColorScheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorScheme.swift; sourceTree = "<group>"; };
@@ -100,6 +102,7 @@
 				32E6E4602AB4CEDE003CB832 /* CalculatorButtonViewModel.swift */,
 				320DA5AD2AB8543800FA5088 /* CalculatorLogic.swift */,
 				32756FEE2ABB12C00024FF48 /* CalculatorSizes.swift */,
+				32002F3B2AD5862200203A23 /* CalculatorModels.swift */,
 			);
 			path = Calculator;
 			sourceTree = "<group>";
@@ -292,6 +295,7 @@
 				320DA5B72AB85ED800FA5088 /* ColorScheme.swift in Sources */,
 				32F902632AB34A3700D9DC19 /* CalculatorView.swift in Sources */,
 				3248A29E2ABC7EE40022B851 /* ResultView.swift in Sources */,
+				32002F3C2AD5862200203A23 /* CalculatorModels.swift in Sources */,
 				32756FEF2ABB12C00024FF48 /* CalculatorSizes.swift in Sources */,
 				3248A29A2ABC72660022B851 /* CalculatorButton.swift in Sources */,
 				3246BE672AC3A1F70058D41B /* ColorSchemeManager.swift in Sources */,
