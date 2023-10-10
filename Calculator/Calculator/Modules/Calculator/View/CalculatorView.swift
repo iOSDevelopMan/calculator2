@@ -13,7 +13,10 @@ struct CalculatorView: View {
     
     var body: some View {
         GeometryReader { geometry in
-            let calculatorSizes = viewModel.calculatorSizes(screenSize: geometry.size)
+            let calculatorSizes = CalculatorSizes(
+                screenSize: geometry.size,
+                rowsCount: viewModel.buttons.count,
+                columnsCount: viewModel.buttons.first?.count ?? 4)
             
             ZStack {
                 viewModel.backgroundColor
