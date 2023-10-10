@@ -15,17 +15,17 @@ struct CalculatorApp: App {
     private var isFirstColorScheme = false
     
     var body: some Scene {
+        @Provider var currencyConvertorService = CurrencyConvertorService() as CurrencyConvertorServiceProtocol
+        @Provider var reachabilityService = ReachabilityService.shared as ReachabilityServiceProtocol
+        
+        let colorScheme = (isFirstColorScheme ? FirstColorScheme() : SecondColorScheme()) as ColorSchemeProtocol
+        @Provider var colorSchemeManager = ColorSchemeManager(colorScheme) as ColorSchemeManagerProtocol
+        
+        let firebaseService = FirebaseService()
+        @Provider var analyticsCenter = AnalyticsCenter(services: [firebaseService]) as AnalyticsProtocol
+        
         WindowGroup {
-            let colorScheme: ColorSchemeProtocol = isFirstColorScheme ? FirstColorScheme() : SecondColorScheme()
-            let firebaseService = FirebaseService()
-            let analyticsCenter = AnalyticsCenter(services: [firebaseService])
-            
-            CalculatorView(
-                viewModel: CalculatorViewModel(
-                    analyticsService: analyticsCenter,
-                    colorSchemeManager: ColorSchemeManager(colorScheme)
-                )
-            )
+            CalculatorView(viewModel: CalculatorViewModel())
         }
     }
 }

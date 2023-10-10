@@ -11,10 +11,10 @@ import Analytics
 
 class CalculatorViewModel: ObservableObject {
     // MARK: - Properties
-    private let currencyConvertorService: CurrencyConvertorServiceProtocol
-    private let reachabilityService: ReachabilityServiceProtocol
-    private let analyticsService: AnalyticsProtocol
-    private let colorSchemeManager: ColorSchemeManagerProtocol
+    @Inject private var currencyConvertorService: CurrencyConvertorServiceProtocol
+    @Inject private var reachabilityService: ReachabilityServiceProtocol
+    @Inject private var analyticsService: AnalyticsProtocol
+    @Inject private var colorSchemeManager: ColorSchemeManagerProtocol
     private var colorScheme: ColorSchemeProtocol { colorSchemeManager.colorScheme.value }
     
     var backgroundColor: Color { colorScheme.background }
@@ -43,15 +43,7 @@ class CalculatorViewModel: ObservableObject {
     private var cancellables: Set<AnyCancellable> = []
     
     // MARK: - Lifecycle
-    init(currencyConvertorService: CurrencyConvertorServiceProtocol = CurrencyConvertorService(),
-         reachabilityService: ReachabilityServiceProtocol = ReachabilityService.shared,
-         analyticsService: AnalyticsProtocol,
-         colorSchemeManager: ColorSchemeManagerProtocol = ColorSchemeManager(FirstColorScheme())) {
-        self.currencyConvertorService = currencyConvertorService
-        self.reachabilityService = reachabilityService
-        self.analyticsService = analyticsService
-        self.colorSchemeManager = colorSchemeManager
-        
+    init() {
         setup()
     }
     

@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		32002F3A2AD5829200203A23 /* Analytics in Frameworks */ = {isa = PBXBuildFile; productRef = 32002F392AD5829200203A23 /* Analytics */; };
 		32002F3C2AD5862200203A23 /* CalculatorModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32002F3B2AD5862200203A23 /* CalculatorModels.swift */; };
+		32002F3E2AD58CD700203A23 /* DependencyManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32002F3D2AD58CD700203A23 /* DependencyManager.swift */; };
 		320DA5AE2AB8543800FA5088 /* CalculatorLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 320DA5AD2AB8543800FA5088 /* CalculatorLogic.swift */; };
 		320DA5B22AB854A400FA5088 /* CurrencyConvertorService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 320DA5B12AB854A400FA5088 /* CurrencyConvertorService.swift */; };
 		320DA5B72AB85ED800FA5088 /* ColorScheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 320DA5B62AB85ED800FA5088 /* ColorScheme.swift */; };
@@ -36,6 +37,7 @@
 
 /* Begin PBXFileReference section */
 		32002F3B2AD5862200203A23 /* CalculatorModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorModels.swift; sourceTree = "<group>"; };
+		32002F3D2AD58CD700203A23 /* DependencyManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyManager.swift; sourceTree = "<group>"; };
 		320DA5AD2AB8543800FA5088 /* CalculatorLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorLogic.swift; sourceTree = "<group>"; };
 		320DA5B12AB854A400FA5088 /* CurrencyConvertorService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyConvertorService.swift; sourceTree = "<group>"; };
 		320DA5B62AB85ED800FA5088 /* ColorScheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorScheme.swift; sourceTree = "<group>"; };
@@ -127,6 +129,7 @@
 			isa = PBXGroup;
 			children = (
 				3246BE662AC3A1F70058D41B /* ColorSchemeManager.swift */,
+				32002F3D2AD58CD700203A23 /* DependencyManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -304,6 +307,7 @@
 				320DA5BA2AB9FB3300FA5088 /* Double+Extensions.swift in Sources */,
 				321C304D2AC5969200A65ADC /* CurrencyService.swift in Sources */,
 				3248A2A82ABC91600022B851 /* AppDelegate.swift in Sources */,
+				32002F3E2AD58CD700203A23 /* DependencyManager.swift in Sources */,
 				3248A2982ABC6AAC0022B851 /* LoaderView.swift in Sources */,
 				32F902612AB34A3700D9DC19 /* CalculatorApp.swift in Sources */,
 				320DA5AE2AB8543800FA5088 /* CalculatorLogic.swift in Sources */,
