@@ -7,12 +7,13 @@
 
 import SwiftUI
 import Combine
+import Analytics
 
 class CalculatorViewModel: ObservableObject {
     // MARK: - Properties
     private let currencyConvertorService: CurrencyConvertorServiceProtocol
     private let reachabilityService: ReachabilityServiceProtocol
-    private let analyticsService: AnalyticsServiceProtocol
+    private let analyticsService: AnalyticsProtocol
     private let colorSchemeManager: ColorSchemeManagerProtocol
     private var colorScheme: ColorSchemeProtocol { colorSchemeManager.colorScheme.value }
     
@@ -44,7 +45,7 @@ class CalculatorViewModel: ObservableObject {
     // MARK: - Lifecycle
     init(currencyConvertorService: CurrencyConvertorServiceProtocol = CurrencyConvertorService(),
          reachabilityService: ReachabilityServiceProtocol = ReachabilityService.shared,
-         analyticsService: AnalyticsServiceProtocol = AnalyticsService(),
+         analyticsService: AnalyticsProtocol,
          colorSchemeManager: ColorSchemeManagerProtocol = ColorSchemeManager(FirstColorScheme())) {
         self.currencyConvertorService = currencyConvertorService
         self.reachabilityService = reachabilityService
@@ -145,7 +146,7 @@ class CalculatorViewModel: ObservableObject {
                     inTheMiddle = false
                     calculatorLogic.setOperand(value)
                 case .failure(let error):
-                    analyticsService.trackEvent("Currency convertion error", params: nil)
+//                    analyticsService.trackEvent("Currency convertion error", params: nil)
                     print(error)
                     isErrorAlertVisible = true
                 }

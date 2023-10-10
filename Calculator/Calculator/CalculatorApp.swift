@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Analytics
 
 @main
 struct CalculatorApp: App {
@@ -16,8 +17,15 @@ struct CalculatorApp: App {
     var body: some Scene {
         WindowGroup {
             let colorScheme: ColorSchemeProtocol = isFirstColorScheme ? FirstColorScheme() : SecondColorScheme()
+            let firebaseService = FirebaseService()
+            let analyticsCenter = AnalyticsCenter(services: [firebaseService])
             
-            CalculatorView(viewModel: CalculatorViewModel(colorSchemeManager: ColorSchemeManager(colorScheme)))
+            CalculatorView(
+                viewModel: CalculatorViewModel(
+                    analyticsService: analyticsCenter,
+                    colorSchemeManager: ColorSchemeManager(colorScheme)
+                )
+            )
         }
     }
 }

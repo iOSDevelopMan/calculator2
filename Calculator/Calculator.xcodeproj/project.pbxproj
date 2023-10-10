@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		32002F3A2AD5829200203A23 /* Analytics in Frameworks */ = {isa = PBXBuildFile; productRef = 32002F392AD5829200203A23 /* Analytics */; };
 		320DA5AE2AB8543800FA5088 /* CalculatorLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 320DA5AD2AB8543800FA5088 /* CalculatorLogic.swift */; };
 		320DA5B22AB854A400FA5088 /* CurrencyConvertorService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 320DA5B12AB854A400FA5088 /* CurrencyConvertorService.swift */; };
 		320DA5B72AB85ED800FA5088 /* ColorScheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 320DA5B62AB85ED800FA5088 /* ColorScheme.swift */; };
@@ -26,7 +27,6 @@
 		32756FEF2ABB12C00024FF48 /* CalculatorSizes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32756FEE2ABB12C00024FF48 /* CalculatorSizes.swift */; };
 		32E6E4612AB4CEDE003CB832 /* CalculatorButtonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32E6E4602AB4CEDE003CB832 /* CalculatorButtonViewModel.swift */; };
 		32E6E4632AB4CF27003CB832 /* CalculatorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32E6E4622AB4CF27003CB832 /* CalculatorViewModel.swift */; };
-		32F580822AC321EF003EB82A /* AnalyticsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F580812AC321EF003EB82A /* AnalyticsService.swift */; };
 		32F902612AB34A3700D9DC19 /* CalculatorApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F902602AB34A3700D9DC19 /* CalculatorApp.swift */; };
 		32F902632AB34A3700D9DC19 /* CalculatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F902622AB34A3700D9DC19 /* CalculatorView.swift */; };
 		32F902652AB34A3900D9DC19 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 32F902642AB34A3900D9DC19 /* Assets.xcassets */; };
@@ -52,7 +52,6 @@
 		32756FEE2ABB12C00024FF48 /* CalculatorSizes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorSizes.swift; sourceTree = "<group>"; };
 		32E6E4602AB4CEDE003CB832 /* CalculatorButtonViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorButtonViewModel.swift; sourceTree = "<group>"; };
 		32E6E4622AB4CF27003CB832 /* CalculatorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorViewModel.swift; sourceTree = "<group>"; };
-		32F580812AC321EF003EB82A /* AnalyticsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsService.swift; sourceTree = "<group>"; };
 		32F9025D2AB34A3700D9DC19 /* Calculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Calculator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		32F902602AB34A3700D9DC19 /* CalculatorApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorApp.swift; sourceTree = "<group>"; };
 		32F902622AB34A3700D9DC19 /* CalculatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorView.swift; sourceTree = "<group>"; };
@@ -65,6 +64,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				32002F3A2AD5829200203A23 /* Analytics in Frameworks */,
 				3248A2A42ABC90840022B851 /* FirebaseAnalytics in Frameworks */,
 				3248A2A62ABC90840022B851 /* FirebaseCrashlytics in Frameworks */,
 			);
@@ -80,7 +80,6 @@
 				320DA5B12AB854A400FA5088 /* CurrencyConvertorService.swift */,
 				32399D422ABB2B880059176E /* ReachabilityService.swift */,
 				3248A2A92ABC91CA0022B851 /* FirebaseService.swift */,
-				32F580812AC321EF003EB82A /* AnalyticsService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -203,6 +202,7 @@
 			packageProductDependencies = (
 				3248A2A32ABC90840022B851 /* FirebaseAnalytics */,
 				3248A2A52ABC90840022B851 /* FirebaseCrashlytics */,
+				32002F392AD5829200203A23 /* Analytics */,
 			);
 			productName = Calculator;
 			productReference = 32F9025D2AB34A3700D9DC19 /* Calculator.app */;
@@ -234,6 +234,7 @@
 			mainGroup = 32F902542AB34A3700D9DC19;
 			packageReferences = (
 				3248A2A22ABC90840022B851 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				32002F382AD5829200203A23 /* XCRemoteSwiftPackageReference "Analytics" */,
 			);
 			productRefGroup = 32F9025E2AB34A3700D9DC19 /* Products */;
 			projectDirPath = "";
@@ -290,7 +291,6 @@
 			files = (
 				320DA5B72AB85ED800FA5088 /* ColorScheme.swift in Sources */,
 				32F902632AB34A3700D9DC19 /* CalculatorView.swift in Sources */,
-				32F580822AC321EF003EB82A /* AnalyticsService.swift in Sources */,
 				3248A29E2ABC7EE40022B851 /* ResultView.swift in Sources */,
 				32756FEF2ABB12C00024FF48 /* CalculatorSizes.swift in Sources */,
 				3248A29A2ABC72660022B851 /* CalculatorButton.swift in Sources */,
@@ -514,6 +514,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		32002F382AD5829200203A23 /* XCRemoteSwiftPackageReference "Analytics" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/iOSDevelopMan/Analytics.git";
+			requirement = {
+				branch = develop;
+				kind = branch;
+			};
+		};
 		3248A2A22ABC90840022B851 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
@@ -525,6 +533,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		32002F392AD5829200203A23 /* Analytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 32002F382AD5829200203A23 /* XCRemoteSwiftPackageReference "Analytics" */;
+			productName = Analytics;
+		};
 		3248A2A32ABC90840022B851 /* FirebaseAnalytics */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 3248A2A22ABC90840022B851 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;

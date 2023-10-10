@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Analytics
 
 struct CalculatorView: View {
     @ObservedObject var viewModel: CalculatorViewModel
@@ -65,6 +66,6 @@ struct CalculatorView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        CalculatorView(viewModel: CalculatorViewModel())
+        CalculatorView(viewModel: CalculatorViewModel(analyticsService: AnalyticsCenter(services: [])))
     }
 }

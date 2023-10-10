@@ -8,26 +8,21 @@
 import Foundation
 import FirebaseCore
 import FirebaseAnalytics
-
-protocol FirebaseServiceProtocol {
-    func configure()
-}
+import Analytics
 
 class FirebaseService {
-    static let shared = FirebaseService()
-    private init() {}
-}
-
-// MARK: - FirebaseServiceProtocol
-extension FirebaseService: FirebaseServiceProtocol {
-    func configure() {
+    init() {
+        configure()
+    }
+    
+    private func configure() {
         FirebaseApp.configure()
     }
 }
 
 // MARK: - AnalyticsServiceProtocol
-extension FirebaseService: AnalyticsServiceProtocol {
-    func trackEvent(_ eventName: String, params parameters: [String : Any]?) {
-        Analytics.logEvent(eventName, parameters: parameters)
+extension FirebaseService: AnalyticsProtocol {
+    func trackEvent(_ event: AnalyticsEventProtocol) {
+        Analytics.logEvent(event.name, parameters: event.params)
     }
 }
