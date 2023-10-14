@@ -1,0 +1,42 @@
+default_platform(:ios)
+
+platform :ios do
+
+  desc "Create app on Apple Developer and App Store Connect sites"
+  lane :create_app do
+    produce
+  end
+
+  desc "Take screenshots"
+  lane :screenshot do
+    snapshot
+  end
+
+  desc "Run Unit Tests"
+  lane :run_unit_tests do
+    scan(
+      scheme: "Calculator2 AssigmentTests",
+      clean: true,
+      device: "iPhone 14 Pro"
+    )
+  end
+
+  desc "Create ipa"
+  lane :build do
+    enable_automatic_code_signing
+    increment_build_number
+    gym
+  end
+
+  desc "Test and build"
+  lane :test_and_build do 
+    run_unit_tests
+    build
+  end
+
+  desc "Upload to App Store"
+  lane :upload do
+    deliver
+  end
+
+end
