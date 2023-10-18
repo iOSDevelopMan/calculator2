@@ -21,7 +21,7 @@ jobs:
           name: Test command
           command: |
             cd Calculator/LoaderView/
-            ls
+            swift test
       
 #      - run: cd Calculator/ && fastlane test_and_build # Run tests using Fastlane
 
