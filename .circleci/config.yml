@@ -17,7 +17,13 @@ jobs:
     # See: https://circleci.com/docs/configuration-reference/#steps
     steps:
       - checkout # check out the code in the project directory
-      - run: cd Calculator/ && fastlane test_and_build # Run tests using Fastlane
+      - run:
+          name: Test command
+          command: |
+            echo "Hello"
+            echo "World"
+      
+#      - run: cd Calculator/ && fastlane test_and_build # Run tests using Fastlane
 
       # Collect XML test results data to show in the UI, and save the same XML
       # files under test-results folder in the Artifacts tab
