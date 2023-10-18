@@ -39,6 +39,14 @@ Take screenshots
 
 Run Unit Tests
 
+### ios run_loader_view_tests
+
+```sh
+[bundle exec] fastlane ios run_loader_view_tests
+```
+
+Run Unit Tests
+
 ### ios build
 
 ```sh

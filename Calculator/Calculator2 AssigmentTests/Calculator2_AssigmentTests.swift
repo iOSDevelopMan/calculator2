@@ -6,9 +6,10 @@
 //
 
 import XCTest
+@testable import Calculator2_Assigment
 
 final class Calculator2_AssigmentTests: XCTestCase {
-    
+        
     private var value = 0
     
     func testExample() {

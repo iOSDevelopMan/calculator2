@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "32F9025C2AB34A3700D9DC19"
-               BuildableName = "Calculator2 Assigment.app"
-               BlueprintName = "Calculator"
-               ReferencedContainer = "container:Calculator.xcodeproj">
+               BuildableName = "Calculator2_Assigment.app"
+               BlueprintName = "Calculator2_Assigment"
+               ReferencedContainer = "container:Calculator2_Assigment.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -37,7 +37,7 @@
                BlueprintIdentifier = "322BEBE12ADC0FA400B405E0"
                BuildableName = "CalculatorTests.xctest"
                BlueprintName = "CalculatorTests"
-               ReferencedContainer = "container:Calculator.xcodeproj">
+               ReferencedContainer = "container:Calculator2_Assigment.xcodeproj">
             </BuildableReference>
          </TestableReference>
          <TestableReference
@@ -46,9 +46,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "322BEBEE2ADC385300B405E0"
-               BuildableName = "CalculatorUITests.xctest"
-               BlueprintName = "CalculatorUITests"
-               ReferencedContainer = "container:Calculator.xcodeproj">
+               BuildableName = "Calculator2_AssigmentUITests.xctest"
+               BlueprintName = "Calculator2_AssigmentUITests"
+               ReferencedContainer = "container:Calculator2_Assigment.xcodeproj">
             </BuildableReference>
          </TestableReference>
          <TestableReference
@@ -57,9 +57,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "322BEBFF2ADD3B8500B405E0"
-               BuildableName = "Calculator2 AssigmentTests.xctest"
-               BlueprintName = "Calculator2 AssigmentTests"
-               ReferencedContainer = "container:Calculator.xcodeproj">
+               BuildableName = "Calculator2_AssigmentTests.xctest"
+               BlueprintName = "Calculator2_AssigmentTests"
+               ReferencedContainer = "container:Calculator2_Assigment.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -79,9 +79,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "32F9025C2AB34A3700D9DC19"
-            BuildableName = "Calculator2 Assigment.app"
-            BlueprintName = "Calculator"
-            ReferencedContainer = "container:Calculator.xcodeproj">
+            BuildableName = "Calculator2_Assigment.app"
+            BlueprintName = "Calculator2_Assigment"
+            ReferencedContainer = "container:Calculator2_Assigment.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -96,9 +96,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "32F9025C2AB34A3700D9DC19"
-            BuildableName = "Calculator2 Assigment.app"
-            BlueprintName = "Calculator"
-            ReferencedContainer = "container:Calculator.xcodeproj">
+            BuildableName = "Calculator2_Assigment.app"
+            BlueprintName = "Calculator2_Assigment"
+            ReferencedContainer = "container:Calculator2_Assigment.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

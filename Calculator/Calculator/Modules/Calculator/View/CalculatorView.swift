@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import LoaderView
 
 struct CalculatorView: View {
     @ObservedObject var viewModel: CalculatorViewModel

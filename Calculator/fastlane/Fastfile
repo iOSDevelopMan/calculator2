@@ -14,8 +14,17 @@ platform :ios do
 
   desc "Run Unit Tests"
   lane :run_unit_tests do
+    run_test("Calculator2_AssigmentTests")
+  end
+
+  desc "Run Unit Tests for LoaderView package"
+  lane :run_loader_view_tests do
+    run_test("LoaderViewTests")
+  end
+
+  def run_test(scheme)
     scan(
-      scheme: "Calculator2 AssigmentTests",
+      scheme: scheme,
       clean: true,
       device: "iPhone 14 Pro"
     )

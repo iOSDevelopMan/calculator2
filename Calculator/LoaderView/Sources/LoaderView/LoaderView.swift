@@ -1,14 +1,9 @@
-//
-//  LoaderView.swift
-//  Calculator
-//
-//  Created by Alexey Kachura on 21.09.23.
-//
-
 import SwiftUI
 
-struct LoaderView: View {
-    var body: some View {
+public struct LoaderView: View {
+    public init() {}
+    
+    public var body: some View {
         ZStack {
             Color.black
                 .ignoresSafeArea()
